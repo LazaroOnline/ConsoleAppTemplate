@@ -17,3 +17,6 @@ This is a template for console applications.
 
 ## Features
 - Logging with `Microsoft.Extensions.Logging`.
+
+## Extra Documentation
+- [Functional Document](/docs/FunctionalDoc.md)
