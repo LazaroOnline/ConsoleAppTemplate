@@ -5,13 +5,13 @@ public class App : IHostedService
 	private readonly IHostApplicationLifetime _applicationLifetime;
 	private ILogger<App> _logger;
 	private IOptions<AppSettings> _appSettins;
-	private Workers.MainWorker _mainWorker;
+	private Workers.IMainWorker _mainWorker;
 	
 	public App(
 		IHostApplicationLifetime applicationLifetime,
 		ILogger<App> logger,
 		IOptions<AppSettings> appSettins,
-		Workers.MainWorker mainWorker
+		Workers.IMainWorker mainWorker
 	) {
 		_applicationLifetime = applicationLifetime;
 		_logger = logger;
@@ -41,9 +41,10 @@ public class App : IHostedService
 		_logger.LogDebug($"Starting app...");
 		_mainWorker.Main();
 		_logger.LogDebug($"App finished running.");
-	}
-	
-	public Task StopAsync(CancellationToken cancellationToken)
+        //Console.ReadLine();
+    }
+
+    public Task StopAsync(CancellationToken cancellationToken)
 	{
 		return Task.CompletedTask;
 	}

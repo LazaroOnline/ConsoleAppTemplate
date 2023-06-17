@@ -1,0 +1,13 @@
+global using Xunit;
+global using NSubstitute;
+global using AutoFixture;
+global using AutoFixture.Xunit2;
+global using AutoFixture.AutoNSubstitute;
+global using FluentAssertions;
+global using FluentAssertions.Common;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.Hosting;
+global using Microsoft.Extensions.Logging;
+global using ConsoleAppTemplate.Workers;
+global using ConsoleAppTemplate;
