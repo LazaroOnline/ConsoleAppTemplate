@@ -4,18 +4,18 @@ public class App : IHostedService
 {
 	private readonly IHostApplicationLifetime _applicationLifetime;
 	private ILogger<App> _logger;
-	private IOptions<AppSettings> _appSettins;
+	private IOptions<AppSettings> _appSettings;
 	private Workers.IMainWorker _mainWorker;
 	
 	public App(
 		IHostApplicationLifetime applicationLifetime,
 		ILogger<App> logger,
-		IOptions<AppSettings> appSettins,
+		IOptions<AppSettings> appSettings,
 		Workers.IMainWorker mainWorker
 	) {
 		_applicationLifetime = applicationLifetime;
 		_logger = logger;
-		_appSettins = appSettins;
+		_appSettings = appSettings;
 		_mainWorker = mainWorker;
 	}
 

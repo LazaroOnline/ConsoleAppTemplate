@@ -8,19 +8,19 @@ public interface IMainWorker
 public class MainWorker : IMainWorker
 {
 	private ILogger<MainWorker> _logger;
-	private IOptions<AppSettings> _appSettins;
+	private IOptions<AppSettings> _appSettings;
 	
 	public MainWorker(
 		ILogger<MainWorker> logger,
 		IOptions<AppSettings> appSettins
 	) {
 		_logger = logger;
-		_appSettins = appSettins;
+		_appSettings = appSettins;
 	}
 
 	public void Main()
 	{
-		var appSettings = _appSettins.Value;
+		var appSettings = _appSettings.Value;
 		_logger.LogInformation($"Starting {nameof(MainWorker)}...");
 		_logger.LogInformation($"AppSettings Name: {appSettings.SomeConfigSection.SomeName}");
 		_logger.LogInformation($"AppSettings URL: {appSettings.SomeConfigSection.SomeUrl}");
