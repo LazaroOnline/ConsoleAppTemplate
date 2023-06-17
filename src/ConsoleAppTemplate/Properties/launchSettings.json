@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ConsoleAppTemplate": {
+      "commandName": "Project",
+      "commandLineArgs": "-u someurl.com"
+    }
+  }
+}

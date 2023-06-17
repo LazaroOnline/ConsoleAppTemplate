@@ -22,15 +22,15 @@ public class App : IHostedService
 	public Task StartAsync(CancellationToken cancellationToken)
 	{
 		try
-            {
+			{
 			Execute();
 			System.Environment.ExitCode = 0;
 		}
-            catch (Exception exception)
-            {
-                _logger.LogCritical(exception, "Unexpected error exception!");
-                System.Environment.ExitCode = 1;
-            }
+		catch (Exception exception)
+		{
+			_logger.LogCritical(exception, "Unexpected error exception!");
+			System.Environment.ExitCode = 1;
+		}
 		_applicationLifetime.StopApplication();
 
 		return Task.CompletedTask;

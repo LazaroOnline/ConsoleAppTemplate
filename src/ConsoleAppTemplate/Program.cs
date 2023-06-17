@@ -8,9 +8,10 @@ public class Program
 	
 	private static Dictionary<string, string> CommandSwitchMapDictionary = new Dictionary<string, string>
 	{
-        // Example:
-        // { "-D",   "Directory" },
-        // { "-Dir", "Directory" },
+        // Parameter names are case in-sensitive:
+        { "-N",   $"{nameof(AppSettings.SomeConfigSection)}:{nameof(AppSettings.SomeConfigSection.SomeName)}" },
+        { "-U",   $"{nameof(AppSettings.SomeConfigSection)}:{nameof(AppSettings.SomeConfigSection.SomeUrl)}" },
+        { "-Url", $"{nameof(AppSettings.SomeConfigSection)}:{nameof(AppSettings.SomeConfigSection.SomeUrl)}" },
     };
 
 	static async Task Main(string[] args)
@@ -19,9 +20,9 @@ public class Program
 		await program.CreateHostBuilder(args).Build().RunAsync();
 	}
 
-    public const string APPSETTINGS_FILENAME = "AppSettings.json";
+	public const string APPSETTINGS_FILENAME = "AppSettings.json";
 
-    private IHostBuilder CreateHostBuilder(string[] args) =>
+	private IHostBuilder CreateHostBuilder(string[] args) =>
 		new HostBuilder()
 			.ConfigureAppConfiguration((hostContext, configApp) =>
 			{

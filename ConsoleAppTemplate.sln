@@ -19,6 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{505E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{34289283-4B5F-40B7-87BC-118D0EA2EB71}"
 	ProjectSection(SolutionItems) = preProject
+		docs\DevelopersGuide.md = docs\DevelopersGuide.md
 		docs\FunctionalDoc.md = docs\FunctionalDoc.md
 	EndProjectSection
 EndProject
@@ -29,27 +30,17 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
-		Development|Any CPU = Development|Any CPU
-		Production|Any CPU = Production|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{343BD97C-8B08-4430-BDDD-CB07D084A8F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{343BD97C-8B08-4430-BDDD-CB07D084A8F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{343BD97C-8B08-4430-BDDD-CB07D084A8F5}.Development|Any CPU.ActiveCfg = Debug|Any CPU
-		{343BD97C-8B08-4430-BDDD-CB07D084A8F5}.Development|Any CPU.Build.0 = Debug|Any CPU
-		{343BD97C-8B08-4430-BDDD-CB07D084A8F5}.Production|Any CPU.ActiveCfg = Release|Any CPU
-		{343BD97C-8B08-4430-BDDD-CB07D084A8F5}.Production|Any CPU.Build.0 = Release|Any CPU
 		{343BD97C-8B08-4430-BDDD-CB07D084A8F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{343BD97C-8B08-4430-BDDD-CB07D084A8F5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5C62A82C-947F-481E-8CB2-26785D7E7EFE}.Debug|Any CPU.ActiveCfg = Development|Any CPU
-		{5C62A82C-947F-481E-8CB2-26785D7E7EFE}.Debug|Any CPU.Build.0 = Development|Any CPU
-		{5C62A82C-947F-481E-8CB2-26785D7E7EFE}.Development|Any CPU.ActiveCfg = Development|Any CPU
-		{5C62A82C-947F-481E-8CB2-26785D7E7EFE}.Development|Any CPU.Build.0 = Development|Any CPU
-		{5C62A82C-947F-481E-8CB2-26785D7E7EFE}.Production|Any CPU.ActiveCfg = Production|Any CPU
-		{5C62A82C-947F-481E-8CB2-26785D7E7EFE}.Production|Any CPU.Build.0 = Production|Any CPU
-		{5C62A82C-947F-481E-8CB2-26785D7E7EFE}.Release|Any CPU.ActiveCfg = Development|Any CPU
-		{5C62A82C-947F-481E-8CB2-26785D7E7EFE}.Release|Any CPU.Build.0 = Development|Any CPU
+		{5C62A82C-947F-481E-8CB2-26785D7E7EFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C62A82C-947F-481E-8CB2-26785D7E7EFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C62A82C-947F-481E-8CB2-26785D7E7EFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C62A82C-947F-481E-8CB2-26785D7E7EFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -32,6 +32,6 @@ public class MainWorkerTest
         sut.Main();
 
         // TODO: assert something useful in the real project:
-        input.Should().Equals(expectedResult);
+        input.Should().Be(expectedResult);
     }
 }
