@@ -1,4 +1,6 @@
-﻿namespace ConsoleAppTemplate;
+﻿using NLog.Extensions.Logging;
+
+namespace ConsoleAppTemplate;
 
 public class Program
 {
@@ -34,13 +36,16 @@ public class Program
 					.AddConfiguration(hostContext.Configuration.GetSection("Logging"))
 					//.SetMinimumLevel(LogLevel.Trace)
 					//.AddConsole()
-                    .AddDebug()
-                    .AddSimpleConsole(options =>
-                    {
-                        options.IncludeScopes = false;
-                        options.SingleLine = true;
-                        options.TimestampFormat = "HH:mm:ss ";
-                    })
+					.AddDebug()
+					.AddNLog(Configuration)
+					/*
+					.AddSimpleConsole(options =>
+					{
+						options.IncludeScopes = false;
+						options.SingleLine = true;
+						options.TimestampFormat = "HH:mm:ss ";
+					})
+					*/
 				;
 			})
 			.ConfigureServices((hostContext, services) =>
