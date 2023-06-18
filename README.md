@@ -43,7 +43,9 @@ Can be done in 2 ways (in order of preference):
 - From the `command-line` parameters during the app invocation.
 - Editing `AppSettings.json` file before running the tool.
 
-The available parameters are:
+The available parameters (case-in-sensitive) are:
+- `--Help`: Display help: config and list of commands.
+- `--Version`: Display the version number.
 - `-U`, `-Url`  `--SomeConfigSection:SomeUrl`: Optional. Some URL.  
 - `--SomeConfigSection:SomeName`: Optional. Some name.  
 ...

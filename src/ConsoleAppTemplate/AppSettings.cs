@@ -1,11 +1,22 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 
 namespace ConsoleAppTemplate;
 
 public class AppSettings
 {
 	public SomeExampleConfigSection SomeConfigSection { get; set; }
-	// ...
+    // ...
+
+
+    public override string ToString()
+    {
+        return @$"Config:
+ - {nameof(AppSettings.SomeConfigSection)}:{nameof(AppSettings.SomeConfigSection.SomeUrl)} = ""{SomeConfigSection?.SomeUrl}""
+ - {nameof(AppSettings.SomeConfigSection)}:{nameof(AppSettings.SomeConfigSection.SomeName)} = ""{SomeConfigSection?.SomeName}""
+ - {nameof(AppSettings.SomeConfigSection)}:{nameof(AppSettings.SomeConfigSection.SomeInt)} = {SomeConfigSection?.SomeInt}
+";
+    }
 }
 
 // TODO: remove this config class example:

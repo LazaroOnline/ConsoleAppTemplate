@@ -1,41 +1,14 @@
 namespace IntegrationTests;
 
-public class IntegrationTest
+public class IntegrationTest : TestBase
 {
-    public IHostBuilder GetHost(
-        IEnumerable<KeyValuePair<string, string?>>? appSettingsDictionary = null,
-        Action<HostBuilderContext, IServiceCollection>? configureServices = null
-    )
-    {
-        IConfiguration configuration = null;
-        var hostBuilder = new HostBuilder()
-            .ConfigureAppConfiguration((hostContext, configApp) =>
-            {
-                configuration = configApp
-                .AddJsonFile(Program.APPSETTINGS_FILENAME, optional: true, reloadOnChange: false)
-                .AddInMemoryCollection(appSettingsDictionary)
-                .Build();
-            })
-            .ConfigureServices((hostContext, services) =>
-            {
-                services.AddOptions<AppSettings>().Bind(configuration).ValidateDataAnnotations();
-                services.AddHostedService<App>();
-                services.RegisterServicesForDependencyInjection();
-                //services.AddTransient<Workers.MainWorker>();
-                configureServices?.Invoke(hostContext, services);
-            })
-            .ConfigureLogging((hostingContext, logging) => {
-                logging.AddConfiguration(hostingContext.Configuration.GetSection("Logging"));
-                logging.AddConsole();
-            });
-
-        return hostBuilder;
-    }
-
     [Fact]
 	public async Task Integration_Test1()
-	{
-        var appSettings = new Dictionary<string, string>();
+    {
+        var appSettings = new Dictionary<string, string>() {
+            { "-Url", "SomeValueE2E" },
+            { $"{nameof(AppSettings.SomeConfigSection)}:{nameof(AppSettings.SomeConfigSection.SomeName)}", "SomeNameE2E" },
+        };
         var mainWorkerMock = Substitute.For<IMainWorker>();
 
         var hostBuilder = GetHost(appSettings, (hostContext, services) => {
@@ -51,10 +24,10 @@ public class IntegrationTest
     [Fact]
     public async Task Integration_Test_NoSetupChanges()
     {
-        var appSettings = new Dictionary<string, string>();
-        var mainWorkerMock = Substitute.For<IMainWorker>();
-
-        var hostBuilder = GetHost();
+        var appSettings = new Dictionary<string, string> {
+            { "", "" },
+        };
+        var hostBuilder = GetHost(appSettings);
         var host = await hostBuilder.StartAsync();
 
         // TODO: add some logic in your tests:

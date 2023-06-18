@@ -11,3 +11,4 @@ global using Microsoft.Extensions.Hosting;
 global using Microsoft.Extensions.Logging;
 global using ConsoleAppTemplate.Workers;
 global using ConsoleAppTemplate;
+global using IntegrationTests.Utils;

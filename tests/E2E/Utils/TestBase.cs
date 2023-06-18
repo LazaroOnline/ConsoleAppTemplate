@@ -2,9 +2,9 @@
 
 namespace E2ETests.Utils;
 
-public class RunApp
+public class TestBase
 {
-    public static Process Run(string args = "")
+    public Process RunApp(string args = "")
     {
         var process = new Process();
         process.StartInfo.UseShellExecute = false;
