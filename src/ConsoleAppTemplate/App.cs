@@ -23,18 +23,24 @@ public class App : IHostedService
         _appArguments = appArguments;
     }
 
+    public class ExitCodes
+    {
+        public const int Success_0 = 0;
+        public const int Error_1 = 1;
+    }
+
     public Task StartAsync(CancellationToken cancellationToken)
 	{
 		try
 			{
 			Execute();
-			System.Environment.ExitCode = 0;
-		}
+            System.Environment.ExitCode = ExitCodes.Success_0;
+        }
 		catch (Exception exception)
 		{
 			_logger.LogCritical(exception, "Unexpected error exception!");
-			System.Environment.ExitCode = 1;
-		}
+            System.Environment.ExitCode = ExitCodes.Error_1;
+        }
 		_applicationLifetime.StopApplication();
 
 		return Task.CompletedTask;

@@ -19,6 +19,7 @@ public class IntegrationTest : TestBase
         // TODO: add some logic in your tests:
 
         mainWorkerMock.Received(1).Main();
+        Environment.ExitCode.Should().Be(App.ExitCodes.Success_0);
     }
 
     [Fact]
@@ -31,7 +32,7 @@ public class IntegrationTest : TestBase
         var host = await hostBuilder.StartAsync();
 
         // TODO: add some logic in your tests:
-        true.Should().Be(true);
+        Environment.ExitCode.Should().Be(App.ExitCodes.Success_0);
     }
 
 }

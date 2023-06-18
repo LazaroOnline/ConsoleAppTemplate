@@ -17,8 +17,9 @@ public class Program
         {
             Console.WriteLine("FATAL ERROR:");
             Console.WriteLine(ex.ToString());
+            System.Environment.ExitCode = App.ExitCodes.Error_1;
         }
-	}
+    }
 
 	private IHostBuilder CreateHostBuilder(string[] args) {
 		IConfiguration configuration = null;
